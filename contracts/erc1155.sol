@@ -59,8 +59,7 @@ contract NFT1155 is ERC1155, Ownable {
         );
     }
 
-    /* Creates the sale of a marketplace item */
-    /* Transfers ownership of the item, as well as funds between parties */
+
     function createMarketSale(uint256 tokenId) public payable {
         uint256 _price = idToMarketItem[tokenId].price;
         uint256 _amount = idToMarketItem[tokenId].amount;
@@ -80,7 +79,7 @@ contract NFT1155 is ERC1155, Ownable {
         require(sent,"Eth not sent to creator");
     }
 
-    /* Returns all unsold market items */
+
     function fetchMarketItems() public view returns (MarketItem[] memory) {
         uint256 itemCount = _tokenIds.current();
         uint256 currentIndex = 0;
@@ -94,7 +93,6 @@ contract NFT1155 is ERC1155, Ownable {
         return items;
     }
 
-    /* Returns only items that a user has purchased */
     function fetchMyNFTs() public view returns (MarketItem[] memory) {
         uint256 totalItemCount = _tokenIds.current();
         uint256 itemCount = 0;
@@ -117,7 +115,6 @@ contract NFT1155 is ERC1155, Ownable {
         return items;
     }
 
-    /* Returns only items a user has listed */
     function fetchItemsListed() public view returns (MarketItem[] memory) {
         uint256 totalItemCount = _tokenIds.current();
         uint256 itemCount = 0;
