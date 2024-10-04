@@ -6,9 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract NFT1155 is ERC1155, Ownable {
-    //contract address goes here and id will be dynamic and will be passed in the _mint function calls
-    //example https://ipfs.io/ipfs/QmT51bbxTbSiYGcF2X39sG6DGYyAX2413A1sZfiACMgJGP?filename={id}.json
-    //if the if id 1 then https://ipfs.io/ipfs/QmT51bbxTbSiYGcF2X39sG6DGYyAX2413A1sZfiACMgJGP?filename=1.json will return the data that needs to be minted
+
     constructor() ERC1155("") {}
 
     mapping(uint256 => string) internal _tokenURIs;
